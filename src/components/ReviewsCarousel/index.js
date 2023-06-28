@@ -13,6 +13,7 @@ class ReviewsCarousel extends Component {
 
     return (
       <div className="review-container">
+        <h1 className="heading">Reviews</h1>
         <img src={imgUrl} alt={username} />
         <p className="username">{username}</p>
         <p className="company">{companyName}</p>
@@ -33,6 +34,7 @@ class ReviewsCarousel extends Component {
 
   onRight = () => {
     const {activeReviewIndex} = this.state
+    const {reviewsList} = this.props
 
     if (activeReviewIndex < reviewsList.length - 1) {
       this.setState(prevState => ({
@@ -43,7 +45,6 @@ class ReviewsCarousel extends Component {
 
   render() {
     const {reviewsList} = this.props
-    const {activeReviewIndex} = this.state
 
     return (
       <div className="app-container">
